@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/speak/speak",
+    "pages/fm/fm",
+    "pages/an/an",
+    "pages/travel/travel"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "安安智能保顾",
+    "navigationBarTextStyle":"black"
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.1.0",
+      "provider": "wx069ba97219f66d99"
+    }
+  }
+}

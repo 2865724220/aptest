@@ -1,0 +1,9 @@
+<!--pages/test/test.wxml-->
+<view class='testWrap'>
+  <view class='img-wrap'>
+   <image class='index-anan' src='../../images/anan.png'></image>
+   <image class='index-slogan' src='../../images/slogan.png'></image>
+  </view>
+  <button class='index-btn' bindtap='goToQ'>召唤安安</button>
+  <text class='index-b'>∞</text>
+</view>

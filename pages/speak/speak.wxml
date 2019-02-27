@@ -1,0 +1,39 @@
+<!--pages/speak/speak.wxml-->
+<view class='speak'>
+  <view class='speakLineW'>
+    <scroll-view scroll-y ="1"  scroll-into-view="{{toView}}" style="height:{{scrollHeight}}rpx;box-sizing:border-box">
+      <view wx:for="{{speakT}}" wx:key="index" id="{{item.id}}">
+        <view class='speakLine clearfix mgt20 speakTAn' wx:if="{{!item.me}}">
+        <image  class='speakIcon' src='../../images/icon-speak.png'></image>
+        <view class='speakTL' >
+          <view bindtouchstart="playS" data-content="{{item.content}}">{{item.content}}</view>
+          <view class="travelT"  wx:if="{{item.travel}}">
+            <text class="travelC" wx:for="{{travelT}}" wx:key="index" bindtap="travel" data-content="{{item}}">{{item}}</text>
+          </view>
+          <view class="travelT"  wx:if="{{item.travelD}}">
+            <text class="travelC" wx:for="{{travelDay}}" wx:key="index" bindtap="travelD" data-content="{{item}}">{{item}}</text>
+          </view>
+          <text class='onceA' wx:if="{{item.onceA}}" bindtap='fm'>立即答题</text>
+          <text class='onceA' wx:if="{{item.recommend}}" data-content="{{item.cityCode}}" bindtap='ftravel'>了解一下</text>
+        </view>
+
+        </view>
+          <view class='speakLine clearfix mgt20 speakLR' id="{{item.id}}" wx:if="{{item.me}}" bindtap="play(item.content)">
+          <image  class='speakIcon' src='../../images/icon-sp.png'></image>
+          <text class='speakTL'>{{item.content}}</text>
+        </view>
+      </view>
+    </scroll-view>
+
+    <view class="speakBottom">
+      <view class='speakBW'>
+        <view bindtouchstart="startR"  bindtouchend="stopR" class="speakBtn">
+          <!-- <image src='../../images/sound.png' class='speakBL' id="speak"></image> -->
+          <view class='speakBR speakBS'  hover-class="speakST">{{speakC}}</view>
+        </view>  
+        <input type='text' bindinput="bindKeyInput"  placeholder='说点什么吧…' class='speakBM' value="{{speakValue}}" cursor-spacing='10'></input>
+        <text class='speakBR' bindtap='sendMsg'>发送</text>
+      </view>
+    </view>
+  </view>
+</view>

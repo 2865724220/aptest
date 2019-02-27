@@ -1,0 +1,2 @@
+<!--pages/an/an.wxml-->
+<web-view src="https://test-paladin.pingan.com.cn:10094/an/#/speak"></web-view>
